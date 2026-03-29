@@ -15,7 +15,7 @@ public class VirtualThreadsJava21Demo {
      **/
     public static void main(String[] args) {
 
-        ExecutorService executor = Executors.newVirtualThreadExecutor();
+       ExecutorService executor = null;//Executors.newVirtualThreadExecutor();
         for (int i = 1; i <= 5; i++) {
             int taskId = i;
             executor.submit(() -> {
