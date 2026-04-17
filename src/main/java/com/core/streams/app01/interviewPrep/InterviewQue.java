@@ -2,10 +2,7 @@ package com.core.streams.app01.interviewPrep;
 
 import com.core.streams.app01.Tcs_Employee;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -58,10 +55,59 @@ public class InterviewQue {
         System.out.println("descOorted employees by salary : " + descOorted);
 
         //Q7.  Find the second-highest salary.
-        Optional<Double> first = empLst.stream().mapToDouble(Tcs_Employee::getSalary).boxed().sorted(Comparator.reverseOrder()).distinct().skip(1)
-                .findFirst();
+        empLst.stream().map(Tcs_Employee::getSalary).distinct().sorted(Comparator.reverseOrder()).skip(
+                1
+        ).findFirst().ifPresent(System.out::println);
 
-        System.out.println("first : " + first.get());
+        // Q8.  Calculate sum of all even numbers in a list.
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        int evenSum = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println("evenSum : " + evenSum);
+//sum of all odd no
+        int oddSum = numbers.stream().filter(n -> n % 2 != 0).mapToInt(Integer::intValue).sum();
+        System.out.println("oddSum : " + oddSum);
+
+
+        // Q9.  Remove duplicate elements from a list using streams.
+
+        List<String> uniqueEmpLst = empLst.stream().map(Tcs_Employee::getName).distinct().toList();
+        System.out.println("uniqueEmpLst : " + uniqueEmpLst);
+
+        // Maintain insertion order and remove dupes using LinkedHashSet
+
+        List<String> uniqueOrdered = uniqueEmpLst.stream()
+                .collect(Collectors.toCollection(LinkedHashSet::new))
+                .stream()
+                .collect(Collectors.toList());
+        System.out.println("uniqueOrdered : " + uniqueOrdered);
+
+
+        //  Q10.  Count strings in a list that start with a specific letter.
+        List<String> names = List.of("Alice", "Adam", "Bob", "Charlie", "Aaron", "Bella", "Albela");
+        long countA = names.stream()
+                .filter(s -> s.startsWith("A"))
+                .count();
+
+        System.out.println("countA : " + countA);
+
+        //Q11.  Sort a list of strings alphabetically (ascending and descending).
+
+        List<String> asc = names.stream().sorted().collect(Collectors.toList());
+        System.out.println("asc  ::" + asc);
+        List<String> desc = names.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println("desc ::" + desc);
+
+
+        List<String> caseInsensitive = names.stream()
+                .sorted(String.CASE_INSENSITIVE_ORDER)
+                .collect(Collectors.toList());
+        System.out.println("caseInsensitive ::" + caseInsensitive);
+
+//Q12.  Find the maximum and minimum values in a list of integers.
+
 
     }
 }
