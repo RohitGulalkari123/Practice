@@ -105,8 +105,28 @@ public class InterviewQue {
                 .sorted(String.CASE_INSENSITIVE_ORDER)
                 .collect(Collectors.toList());
         System.out.println("caseInsensitive ::" + caseInsensitive);
+// find avg by male and female
+        List<Student> students = List.of(
+                new Student("Alice", "Female", 22),
+                new Student("Bob", "Male", 25),
+                new Student("Charlie", "Male", 23),
+                new Student("Diana", "Female", 24),
+                new Student("Eve", "Female", 21),
+                new Student("Frank", "Male", 26)
+        );
 
-//Q12.  Find the maximum and minimum values in a list of integers.
+        Map<String, Double> avgStudentAgeMap = students.stream().collect(Collectors.groupingBy(Student::gender, Collectors.averagingInt(Student::age)));
+        System.out.println("avgStudentAgeMap : " + avgStudentAgeMap);
+
+      //  Q16.  Find sum using mapToInt() and sum().
+
+        int totalSalary = empLst.stream()
+                .mapToInt(e -> e.getSalary())
+                .sum();
+
+        System.out.println("totalSalary : " + totalSalary);
+
+
 
 
     }
