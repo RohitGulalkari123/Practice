@@ -1,0 +1,56 @@
+🟢 LEVEL 1 (Basic – MUST BE PERFECT)
+🔹 Integers
+Filter even numbers
+Filter numbers greater than 10
+Square each number
+Find sum of all numbers
+Find max and min
+Count total elements
+Remove duplicates
+🔹 Strings
+Convert all strings to uppercase
+Filter strings starting with "A"
+Find length of each string
+Count strings with length > 5
+Sort strings alphabetically
+🟡 LEVEL 2 (Core Interview)
+🔹 Integers
+Find second largest number
+Find top 3 largest numbers
+Find numbers divisible by 3
+Check if any number > 100
+Check if all numbers are positive
+Find average of numbers
+🔹 Strings
+Find longest string
+Find shortest string
+Count frequency of each string
+Find duplicate strings
+Sort by length
+Group strings by length
+🔴 LEVEL 3 (IMPORTANT / TRICKY)
+🔹 Integers
+Find first non-repeating number
+Find duplicate numbers
+Partition numbers into even & odd
+
+👉 Hint:
+
+Collectors.partitioningBy(n -> n % 2 == 0)
+Sum of squares of even numbers
+Find numbers whose square > 50
+Convert List<Integer> → Map<Integer, Integer> (num → square)
+🔹 Strings
+Find first non-repeating character
+Find duplicate characters
+Flatten list of sentences → words
+Count total characters in list
+Find all palindromes
+🔥 BONUS (VERY FREQUENT)
+🔹 Mixed Thinking
+Join strings with comma
+Collectors.joining(", ")
+Convert list to Set
+Convert list to Map (handle duplicates)
+Sort integers in descending order
+Reverse each string

@@ -5,6 +5,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ArrayStreamDemo {
     public static void main(String arg[]) {
@@ -68,6 +69,14 @@ public class ArrayStreamDemo {
         List<Integer> evens = partitioned.get(true);   // [2, 4, 6]
         List<Integer> odds = partitioned.get(false);  // [1, 3, 5]
         System.out.println("evens :" + evens + " odds :" + odds);
+
+        //Reverse the array
+        int[] revArr = {1, 2, 3, 4, 5};
+        int [] reversedArray= IntStream.rangeClosed(1, revArr.length).map(i->arr[arr.length - i]).toArray();
+        for(int a : reversedArray){
+            System.out.println("reversedArray:" + a);
+
+        }
 
     }
 }
