@@ -54,3 +54,43 @@ Convert list to Set
 Convert list to Map (handle duplicates)
 Sort integers in descending order
 Reverse each string
+
+---------------------
+🔥 FLATMAP CORE (MUST MASTER)
+Get all skills of all employees (flatten list)
+Get distinct skills across company
+Count total number of skills in company
+Find employees who have "Java" skill
+Get top 3 most common skills
+🔥 NESTED + REAL-WORLD (INTERVIEW FAVORITE)
+Get all project names across employees
+Find total project count
+Find employee who worked on longest project
+Get department → all project names
+Find average project duration per employee
+🔥 MULTI-LEVEL GROUPING (ADVANCED)
+Group by department → then by age > 30 (true/false)
+Group by department → get average salary → sort result
+Department → highest paid employee name
+Department → list of top 2 earners
+🔥 PARTITIONING (VERY IMPORTANT)
+Partition employees into salary > 50K and <= 50K
+Partition employees into age > 30
+Partition + count in each category
+🔥 REDUCING (INTERVIEW TRAP)
+Find total salary using reduce()
+Find highest salary using reduce()
+Concatenate all employee names
+🔥 MAP + TRANSFORMATION (ADVANCED)
+Convert to Map<Dept, TotalSalary>
+Convert to Map<Dept, AvgAge>
+Convert to Map<Skill, List<Employee>>
+🔥 SORTING (REAL INTERVIEW LEVEL)
+Sort by salary, then by age
+Sort employees by number of skills
+Sort departments by total salary
+🔥 EDGE / TRICKY QUESTIONS
+Find employees with no projects
+Find duplicate employee names
+Get second youngest employee
+Find employees working on more than 1 project
