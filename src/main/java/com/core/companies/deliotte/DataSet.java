@@ -51,7 +51,7 @@ public class DataSet {
                 Arrays.asList(new Project("P11", 20))),
 
             // 🔥 Edge cases
-            new Employee(11, "Rohit", "IT", 60000, 28,   // duplicate name + salary
+            new Employee(11, "Rohit Jain", "IT", 60000, 28,   // duplicate name + salary
                 Arrays.asList("Java"),
                 Arrays.asList(new Project("P12", 2))),
 
