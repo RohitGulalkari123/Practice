@@ -1,4 +1,4 @@
-package com.core.companies.deliotte;
+package com.core.companies.deliotte.model;
 
 class Department {
     int id;

@@ -1,12 +1,17 @@
-package com.core.companies.deliotte;
+package com.core.companies.deliotte.model;
 
+
+import java.util.List;
 import java.util.Objects;
 
-class Employee {
+public class Employee {
     int id;
     String name;
     String department;
     double salary;
+    int age;
+    List<String> skills;
+    List<Project> projects;
 
     @Override
     public String toString() {
@@ -19,14 +24,14 @@ class Employee {
                 '}';
     }
 
-    int age;
-
-    public Employee(int id, String name, String department, double salary, int age) {
+    public Employee(int id, String name, String department, double salary, int age, List<String> skills, List<Project> projects) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.salary = salary;
         this.age = age;
+        this.skills = skills;
+        this.projects = projects;
     }
 
     public int getId() { return id; }

@@ -1,5 +1,7 @@
 package com.core.companies.deliotte;
 
+import com.core.companies.deliotte.model.Employee;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -9,18 +11,7 @@ import java.util.stream.Stream;
 
 public class StreamHandsOn {
     public static void main(String arg[]) {
-        List<Employee> employees = Arrays.asList(
-                new Employee(1, "Rohit", "IT", 60000, 28),
-                new Employee(2, "Amit", "HR", 40000, 32),
-                new Employee(3, "Neha", "IT", 75000, 26),
-                new Employee(4, "Pooja", "Finance", 50000, 30),
-                new Employee(5, "Rahul", "IT", 60000, 35),
-                new Employee(6, "Sneha", "HR", 45000, 29),
-                new Employee(7, "Karan", "Finance", 80000, 40),
-                new Employee(8, "Ankit", "IT", 30000, 24),
-                new Employee(9, "Priya", "HR", 70000, 31),
-                new Employee(10, "Vikas", "Finance", 90000, 45)
-        );
+        List<Employee> employees = DataSet.getEmployees();
 
         List<String> empNames = employees.stream().map(Employee::getName).toList();
         System.out.println("empNames:" + empNames);
