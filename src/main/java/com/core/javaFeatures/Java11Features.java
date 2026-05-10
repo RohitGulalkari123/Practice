@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Java11Features {
     public static void main(String[] args) throws IOException {
@@ -109,6 +110,44 @@ public class Java11Features {
         // JAVA 11:
         System.out.println(optional.isEmpty());
 
+        /*
+         * ============================================================
+         * 6. HTTP Client API
+         * ============================================================
+         *
+         * BEFORE JAVA 11:
+         * HttpURLConnection was ugly and verbose
+         *
+         * JAVA 11:
+         * Modern HTTP Client introduced
+         */
+
+        /*
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://jsonplaceholder.typicode.com/posts/1"))
+                .build();
+
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+         */
+
+        /*
+         * ============================================================
+         * 7. Predicate.not()
+         * ============================================================
+         */
+
+        List<String> filtered =
+                names.stream()
+                        // BEFORE: s -> !s.isBlank()
+                        .filter(java.util.function.Predicate.not(String::isBlank))
+                        .collect(Collectors.toList());
+
+        System.out.println(filtered);
 
     }
 }
