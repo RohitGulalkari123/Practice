@@ -16,6 +16,8 @@ public class App01 {
         //02 Remove duplicates from the string and return in the same order
         String str2 = "abcdabcd";
         str2.chars().distinct().mapToObj(x -> (char) x).forEach(System.out::print);
+        System.out.println("Remove duplicates");
+        Arrays.stream(str2.split("")).distinct().forEach(System.out::print);
 
         //03 Find the word that has the second highest length|
         String str3 = "India Is My Country";
@@ -110,6 +112,20 @@ public class App01 {
         int arr5[] = {12, 5, 45, 5, 6, 7, 8};
         Integer reduceSumOftwoNos = Arrays.stream(arr5).boxed().toList().stream().limit(2).reduce(1, (a, b) -> a * b);
         System.out.println("Prodcut of firdst 2 element s :" + reduceSumOftwoNos);
+
+        //16 Group /Pair anagrams from a list of Strings.
+
+        String [] strArr={"madam","pan","temp","ramp","nap","amamd","pemt"};
+
+        Map<String, List<String>> anagramListPair = Arrays.stream(strArr)
+                .collect(Collectors.groupingBy(
+                        x -> Arrays.stream(x.toLowerCase().split(""))
+
+                                .sorted().collect(Collectors.joining(" "))));
+        System.out.println("anagramListPair :" + anagramListPair);
+
+        //17 Write a stream program to multiply alternative numbers in an array
+
 
     }
 
