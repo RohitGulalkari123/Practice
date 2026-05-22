@@ -1,8 +1,8 @@
-package com.core.streams.app01;
+package com.core.capgimini.streams.javafeatures.streams.employees;
 
 import java.util.List;
 
-public class Tcs_Employee {
+public class CapgiminiEmployee {
     private String name;
     private String department;
     private int salary;
@@ -17,7 +17,7 @@ public class Tcs_Employee {
         this.skills = skills;
     }
 
-    public Tcs_Employee(String name, String department, int salary, int age, List<String> skills) {
+    public CapgiminiEmployee(String name, String department, int salary, int age, List<String> skills) {
         this.name = name;
         this.department = department;
         this.salary = salary;
